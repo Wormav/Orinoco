@@ -1,29 +1,30 @@
-.container {
+.product {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  &Title {
+    font-size: 40px;
+    color: $primary;
+    margin-bottom: 120px;
+  }
 }
 
-.titleShop {
-  font-size: 40px;
-  color: $primary;
-  margin-bottom: 120px;
-}
+
 
 .card {
-    border : solid 2px $primary;
-    border-radius : 10px;
-    box-shadow: 0 0 16px #0000002e;
-    width: 350px;
-    height: 300px;
+  border: solid 2px $primary;
+  border-radius: 10px;
+  box-shadow: 0 0 16px #0000002e;
+  width: 350px;
+  height: 300px;
 
-    &Img {
-        margin-top: 1px;
-        border-radius: 10px 10px 0 0;
-        width: 345px;
-        height: 180px;
-        object-fit: cover;
-    }
+  &Img {
+    margin-top: 1px;
+    border-radius: 10px 10px 0 0;
+    width: 345px;
+    height: 180px;
+    object-fit: cover;
+  }
 }
-

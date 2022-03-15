@@ -39,14 +39,13 @@ header {
   border-bottom: solid 1px #FFC901;
 }
 
-.container {
+.product {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-
-.titleShop {
+.productTitle {
   font-size: 40px;
   color: #FFC901;
   margin-bottom: 120px;
