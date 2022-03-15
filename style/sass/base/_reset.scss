@@ -2,11 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: $primary; // pour voir avec font noir
-}
-
-body {
-    background: rgb(51,54,50);
-    background: linear-gradient(190deg, rgba(51,54,50,1) 0%, rgba(36,36,36,1) 100%) no-repeat center center fixed;
     
 }
+
+a:link 
+{ 
+ text-decoration:none; 
+} 
+

@@ -3,7 +3,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #FFC901;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 body {
@@ -33,10 +36,26 @@ header {
   margin: 10px;
   list-style: none;
   font-size: 25px;
+  color: #FFC901;
 }
 .nav li:hover {
   cursor: pointer;
   border-bottom: solid 1px #FFC901;
+}
+
+.titleProduct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: #FFC901;
+  margin-bottom: 120px;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .product {
@@ -45,25 +64,75 @@ header {
   align-items: center;
   flex-direction: column;
 }
-.productTitle {
-  font-size: 40px;
+.productBtn {
+  margin-top: 15px;
+  background-color: #333632;
   color: #FFC901;
-  margin-bottom: 120px;
+  border: solid 2px #FFC901;
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 16px #0000002e;
+  cursor: pointer;
 }
 
 .card {
+  background-color: #D9DEDA;
   border: solid 2px #FFC901;
   border-radius: 10px;
   box-shadow: 0 0 16px #0000002e;
   width: 350px;
-  height: 300px;
+  height: 420px;
 }
 .cardImg {
   margin-top: 1px;
   border-radius: 10px 10px 0 0;
   width: 345px;
-  height: 180px;
+  height: 250px;
   object-fit: cover;
+  border-bottom: solid 2px #FFC901;
+}
+.cardDescriptionName {
+  display: flex;
+  justify-content: center;
+  color: black;
+  margin-bottom: 3px;
+}
+.cardDescriptionNotation {
+  display: flex;
+  justify-content: center;
+  color: black;
+  margin-bottom: 3px;
+}
+.cardDescriptionPrice {
+  display: flex;
+  justify-content: center;
+  color: black;
+  margin-bottom: 3px;
+}
+.cardText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  margin: 4px;
+  color: black;
+  font-size: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #D9DEDA;
+  margin-top: 150px;
+  height: 50px;
+  border-top: solid 5px #FFC901;
+}
+.footer a {
+  margin: 0 20px;
+  color: black;
 }
 
 /*# sourceMappingURL=style.css.map */
