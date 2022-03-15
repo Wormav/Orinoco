@@ -1,7 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 *, ::before, ::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #FFC901;
+}
+
+body {
+  background: #333632;
+  background: linear-gradient(190deg, #333632 0%, #242424 100%) no-repeat center center fixed;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 1rem 70px 15px;
+}
+
+.title {
+  font-family: "Satisfy", Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  color: #FFC901;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav li {
+  margin: 10px;
+  list-style: none;
+  font-size: 25px;
+}
+.nav li:hover {
+  cursor: pointer;
+  border-bottom: solid 1px #FFC901;
 }
 
 /*# sourceMappingURL=style.css.map */

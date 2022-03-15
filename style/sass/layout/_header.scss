@@ -1,0 +1,27 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 1rem 70px 15px;
+}
+
+.title {
+  font-family: "Satisfy", Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  color: $primary;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav li {
+  margin: 10px;
+  list-style: none;
+  font-size: 25px;
+  &:hover {
+    cursor: pointer;
+    border-bottom: solid 1px $primary;
+  }
+}
