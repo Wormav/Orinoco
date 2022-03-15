@@ -39,4 +39,32 @@ header {
   border-bottom: solid 1px #FFC901;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titleShop {
+  font-size: 40px;
+  color: #FFC901;
+  margin-bottom: 120px;
+}
+
+.card {
+  border: solid 2px #FFC901;
+  border-radius: 10px;
+  box-shadow: 0 0 16px #0000002e;
+  width: 350px;
+  height: 300px;
+}
+.cardImg {
+  margin-top: 1px;
+  border-radius: 10px 10px 0 0;
+  width: 345px;
+  height: 180px;
+  object-fit: cover;
+}
+
 /*# sourceMappingURL=style.css.map */
