@@ -31,7 +31,7 @@ No model is given. You are asked to improvise the user interface.
 
 ### Notes on the realization of the project
 
-- The integration is done on the Visual Studio Code editor with the [Live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), [Github copilot](https://copilot.github.com/) plugins. The theme, UI and keyboard shortcuts are customized.
+- The integration is done on the Visual Studio Code editor with the [Live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), [Github copilot](https://copilot.github.com/) plugins. The theme, UI and keyboard shortcuts are customized.[Bootstrap](https://getbootstrap.com/) CSS frameworks.
 
 ### Contact
 
