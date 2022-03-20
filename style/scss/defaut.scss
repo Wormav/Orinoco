@@ -11,17 +11,24 @@ $theme-colors: (
   text-decoration: underline;
 }
 
+.titleShop {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 // css
+
+
 #body {
   background: #333632;
   background: linear-gradient(190deg, #333632 0%, #242424 100%) no-repeat center
     center fixed;
 }
 
-#titleNavbar {
+.titleNavbar {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: x-large
+    font-size: x-large;
+    text-decoration: none;
 }
 
 // import bootstrap

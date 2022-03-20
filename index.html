@@ -28,7 +28,7 @@
     <header>
       <nav class="navbar navbar-light bg-primaryP navbar-expand-md sticky-top">
         <div class="container">
-          <div class="navbar-brand" id="titleNavbar">Orninoco</div>
+          <div class="navbar-brand"><a class="text-dark  titleNavbar" href="index.html">Orninoco</a></div>
           <button
             class="navbar-toggler"
             data-bs-toggle="collapse"
@@ -56,7 +56,21 @@
       </nav>
     </header>
     <main>
-
+      <h1 class="text-center mt-5 text-secondaryP titleShop">Nos produits</h1>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="card m-3"> <!-- Mettez chaque item dans une carte bootstrap -->
+            <img src="./vcam_1.jpg" alt="appareil photo" class="card-img-top" />
+            <div class="card-body bg-primaryP" style="min-height: 130px">
+              <h5 class="text-center titleShop" style="font-weight:bolder">lumix 007</h5>
+              <p class="text-center">Cette appareil photo permet de photographier un peu tout même si vous n'avez pas de talent!</p>
+              <p class="text-center mt-4" style="font-weight:bolder">500,00€<p>
+            </div>
+            <div class="card-footer bg-dark">
+              <button type="button" class="btn w-100 btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#echarpeModal">Acheter</button>
+            </div>
+          </div>
+        </div>
     </main>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
   </body>
