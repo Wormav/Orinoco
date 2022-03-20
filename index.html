@@ -9,9 +9,13 @@
 
     <!-- Meta -->
     <!-- Link -->
+    
 
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
     <link rel="stylesheet" href="style/css/style.css" />
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 
     <!-- Link -->
 
@@ -20,17 +24,17 @@
 
   <!-- Body -->
 
-  <body>
+  <body id="body">
     <header>
-      <nav class="navbar bg-primary navbar-dark navbar-expand-md sticky-top">
+      <nav class="navbar navbar-light bg-primaryP navbar-expand-md sticky-top">
         <div class="container">
-          <div class="navbar-brand">Orninoco</div>
+          <div class="navbar-brand" id="titleNavbar">Orninoco</div>
           <button
             class="navbar-toggler"
             data-bs-toggle="collapse"
             data-bs-target="#navbarText"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon text-dark"></span>
           </button>
           <div
             id="navbarText"
@@ -38,19 +42,22 @@
           >
             <ul class="navbar-nav mt-md-0 mt-4">
               <li class="nav-item">
-                <a class="nav-link active" href="#">Shop</a>
+                <a class="nav-link  text-dark text-decoration-underline" href="#">Shop</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link text-dark text-underline-hover" href="#">Contact</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pannier</a>
+                <a class="nav-link text-dark text-underline-hover" href="#">Pannier</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
+    <main>
+
+    </main>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
   </body>
 

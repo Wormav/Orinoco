@@ -1,0 +1,29 @@
+// Custom bootstrap
+
+$theme-colors: (
+  "primaryP": #d8ddd9,
+  "secondaryP": #ffc901,
+);
+
+// Custom class
+
+.text-underline-hover:hover {
+  text-decoration: underline;
+}
+
+// css
+#body {
+  background: #333632;
+  background: linear-gradient(190deg, #333632 0%, #242424 100%) no-repeat center
+    center fixed;
+}
+
+#titleNavbar {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: x-large
+}
+
+// import bootstrap
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
