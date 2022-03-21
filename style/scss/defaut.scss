@@ -7,6 +7,11 @@ $theme-colors: (
 
 // Custom class
 
+img {
+  max-width: 700px;
+  max-height: 700px;
+}
+
 .text-underline-hover:hover {
   text-decoration: underline;
 }
