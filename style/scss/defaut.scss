@@ -12,7 +12,7 @@ $theme-colors: (
 }
 
 .titleShop {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .textDecorationNone {
@@ -21,7 +21,6 @@ $theme-colors: (
 
 // css
 
-
 #body {
   background: #333632;
   background: linear-gradient(190deg, #333632 0%, #242424 100%) no-repeat center
@@ -29,10 +28,23 @@ $theme-colors: (
 }
 
 .titleNavbar {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    font-size: x-large;
-    text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: x-large;
+  text-decoration: none;
+}
+
+#basket {
+  position: relative;
+  font-size: 25px;
+}
+
+#numberShop {
+  position: absolute;
+  transform: translateY(-40px);
+  border-radius: 15px;
+  padding: 1px 7px;
+  font-size: 13px;
 }
 
 // import bootstrap

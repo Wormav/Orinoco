@@ -9,13 +9,13 @@
 
     <!-- Meta -->
     <!-- Link -->
-
+    <script src="https://kit.fontawesome.com/efb41ebdf8.js" crossorigin="anonymous"></script>
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.css"
     />
     <link rel="stylesheet" href="style/css/style.css" />
-
+    
     <!-- Link -->
 
     <title>Orinoco</title>
@@ -53,9 +53,9 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark text-underline-hover" href="#"
-                  >Pannier</a
-                >
+                <a class="nav-link text-dark fa fa-shopping-cart" id="basket" href="#"
+                  ></a>
+                  <span class="bg-danger" id="numberShop">1</span>
               </li>
             </ul>
           </div>
@@ -64,7 +64,7 @@
     </header>
     <main>
       <h1 class="text-center mt-5 text-secondaryP titleShop">Nos produits</h1>
-      <div class="row mt-5">
+      <div class="row mt-5 g-0">
         <div class="col-lg-4 col-md-6 px-5">
           <div class="card m-3">
             <!-- Mettez chaque item dans une carte bootstrap -->
@@ -210,13 +210,15 @@
     </main>
     <footer class="bg-primaryP text-dark mt-4 py-2">
       <div class="container text-center">
-        <a href="#" class="text-dark textDecorationNone text-underline-hover"
-          >Contact</a
-        >
-        <a href="#" class="text-dark textDecorationNone text-underline-hover"
-          >Mentions légales</a
-        >
-        <p>© Jétémy Lorette</p>
+        <div class="row">
+          <a href="#" class="col-lg-4 col-sm-12 text-dark textDecorationNone text-underline-hover"
+            >Contact</a
+          >
+          <a href="#" class="col-lg-4 col-sm-12 text-dark textDecorationNone text-underline-hover"
+            >Mentions légales</a
+          >
+          <p class="col-lg-4 col-md-12">© Jérémy Lorette</p>
+        </div>
       </div>
     </footer>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
