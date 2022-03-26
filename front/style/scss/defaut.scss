@@ -24,6 +24,7 @@ img {
   max-height: 700px;
 }
 
+
 .text-underline-hover:hover {
   text-decoration: underline;
 }
@@ -66,4 +67,4 @@ img {
 
 // import bootstrap
 
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
