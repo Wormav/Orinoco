@@ -84,7 +84,7 @@ function getItems() {
           "btnCard"
         );
         cardBtn.href = `product.html?id=${returnAPI[item]._id}`
-        cardBtn.innerText = 'Acheter'
+        cardBtn.innerText = 'Afficher le produit'
         
       }
     });
