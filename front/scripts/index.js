@@ -2,6 +2,7 @@ const url = "http://localhost:3000/api/cameras";
 
 const container = document.querySelector("#cardContain");
 
+
 // appel fetch pour recupéré les données de l'API
 
 function getItems() {
@@ -61,10 +62,9 @@ function getItems() {
         // passage du prix en euro
         returnAPI[item].price = returnAPI[item].price / 100;
         itemPrice.innerHTML = new Intl.NumberFormat("fr-FR", {
-          style : "currency",
-          currency : "EUR"
-        }).format(returnAPI[item].price)
-        
+          style: "currency",
+          currency: "EUR",
+        }).format(returnAPI[item].price);
 
         // footer de la carte
         let itemFooter = document.createElement("div");
@@ -72,7 +72,7 @@ function getItems() {
         itemFooter.classList.add("card-footer", "bg-dark");
 
         // button achter
-        let cardBtn = document.createElement("button");
+        let cardBtn = document.createElement("a");
         itemFooter.appendChild(cardBtn);
         cardBtn.classList.add(
           "btn",
@@ -80,12 +80,16 @@ function getItems() {
           "text-secondaryP",
           "border",
           "border-secondaryP",
-          "btn-outline-secondary"
+          "btn-outline-secondary",
+          "btnCard"
         );
-        cardBtn.innerText = "Acheter";
-        cardBtn.type = "button";
+        cardBtn.href = `product.html?id=${returnAPI[item]._id}`
+        cardBtn.innerText = 'Acheter'
+        
       }
     });
 }
 
 getItems();
+
+
