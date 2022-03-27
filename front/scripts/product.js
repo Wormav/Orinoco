@@ -2,8 +2,11 @@ const url = "http://localhost:3000/api/cameras";
 const mainContainer = document.querySelector("main");
 
 // recupere l'id du produit dans l'url
+
 let params = new URLSearchParams(window.location.search);
 let id = params.get("id");
+
+//appel API avec ID pour un produit et intégration dans le html
 
 function getItemProduct() {
   fetch(url + "/" + id)
@@ -15,7 +18,7 @@ function getItemProduct() {
     })
     .then(function (returnAPI) {
       const item = returnAPI;
-      console.log(item);
+    //   console.log(item); // pour vérifier que l'appel fonctionne 
 
       // img
       let img = document.querySelector("#img");
@@ -27,15 +30,15 @@ function getItemProduct() {
 
       //description
       let description = document.querySelector("#description");
-      description.innerText = returnAPI.description
+      description.innerText = returnAPI.description;
 
       //prix
       let price = document.querySelector("#price");
       returnAPI.price = returnAPI.price / 100;
-        price.innerText = new Intl.NumberFormat("fr-FR", {
-          style: "currency",
-          currency: "EUR",
-        }).format(returnAPI.price);
+      price.innerText = new Intl.NumberFormat("fr-FR", {
+        style: "currency",
+        currency: "EUR",
+      }).format(returnAPI.price);
     });
 }
 
