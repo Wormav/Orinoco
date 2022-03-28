@@ -1,6 +1,6 @@
 const url = "http://localhost:3000/api/cameras";
 const mainContainer = document.querySelector("main");
-
+const btn = document.querySelector("button");
 // recupere l'id du produit dans l'url
 
 let params = new URLSearchParams(window.location.search);
@@ -18,7 +18,7 @@ function getItemProduct() {
     })
     .then(function (returnAPI) {
       const item = returnAPI;
-    //   console.log(item); // pour vérifier que l'appel fonctionne 
+      //   console.log(item); // pour vérifier que l'appel fonctionne
 
       // img
       let img = document.querySelector("#img");
