@@ -1,6 +1,6 @@
 const url = "http://localhost:3000/api/cameras";
 const mainContainer = document.querySelector("main");
-const btn = document.querySelector("button");
+const btn = document.querySelector("#btn");
 // recupere l'id du produit dans l'url
 
 let params = new URLSearchParams(window.location.search);
@@ -43,3 +43,9 @@ function getItemProduct() {
 }
 
 getItemProduct();
+
+// click du btn acheter
+
+btn.addEventListener("click", () => {
+  
+});
