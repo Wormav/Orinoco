@@ -61,7 +61,7 @@ quantityInput.addEventListener("change", (e) => {
 
 function addInBasket() {
   btn.addEventListener("click", () => {
-    if (quantity > 0 && quantity < 100) {
+    if (quantitySelect > 0 && quantitySelect < 100) {
       let productADD = {
         name: nameProduct.innerHTML,
         price: parseFloat(priceProduct.innerHTML),
