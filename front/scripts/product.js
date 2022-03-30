@@ -1,17 +1,16 @@
 const url = "http://localhost:3000/api/cameras";
 const mainContainer = document.querySelector("main");
 const btn = document.querySelector("#btn");
+const quantityInput = document.querySelector("input#selection");
 let quantity = 1;
-document.querySelector('input#selection').addEventListener('change', (e) => {
-    quantity = e.target.value;
-});
+
+
 
 
 // recupere l'id du produit dans l'url
 
 let params = new URLSearchParams(window.location.search);
 let id = params.get("id");
-
 
 //appel API avec ID pour un produit et intégration dans le html
 
@@ -41,23 +40,28 @@ function getItemProduct() {
       description.innerText = returnAPI.description;
 
       //prix
+
       let price = document.querySelector("#price");
       returnAPI.price = returnAPI.price / 100;
       price.innerText = new Intl.NumberFormat("fr-FR", {
         style: "currency",
         currency: "EUR",
       }).format(returnAPI.price);
+
+      
     });
 }
 
 getItemProduct();
 
+// actualise la variable quantity 
 
+quantityInput.addEventListener("change", (e) => {
+  quantity = e.target.value;
+});
 
 
 
 // click du btn acheter
 
-btn.addEventListener("click", () => {
-  
-});
+btn.addEventListener("click", () => {});
