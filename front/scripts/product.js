@@ -1,11 +1,12 @@
 const url = "http://localhost:3000/api/cameras";
 const mainContainer = document.querySelector("main");
+const imgProduct = document.querySelector("#img");
+const nameProduct = document.querySelector("#name");
+const descriptionProduct = document.querySelector("#description");
+const priceProduct = document.querySelector("#price");
 const btn = document.querySelector("#btn");
 const quantityInput = document.querySelector("input#selection");
-let quantity = 1;
-
-
-
+let quantitySelect = 1;
 
 // recupere l'id du produit dans l'url
 
@@ -27,41 +28,63 @@ function getItemProduct() {
       //   console.log(item); // pour vérifier que l'appel fonctionne
 
       // img
-      let img = document.querySelector("#img");
-      img.src = returnAPI.imageUrl;
+
+      imgProduct.src = returnAPI.imageUrl;
 
       // name
-      let name = document.querySelector("#name");
-      name.innerText = returnAPI.name;
+
+      nameProduct.innerText = returnAPI.name;
 
       //description
 
-      let description = document.querySelector("#description");
-      description.innerText = returnAPI.description;
+      descriptionProduct.innerText = returnAPI.description;
 
       //prix
 
-      let price = document.querySelector("#price");
       returnAPI.price = returnAPI.price / 100;
       price.innerText = new Intl.NumberFormat("fr-FR", {
         style: "currency",
         currency: "EUR",
       }).format(returnAPI.price);
-
-      
     });
 }
 
 getItemProduct();
 
-// actualise la variable quantity 
+// actualise la variable quantity
 
 quantityInput.addEventListener("change", (e) => {
-  quantity = e.target.value;
+  quantitySelect = e.target.value;
 });
-
-
 
 // click du btn acheter
 
-btn.addEventListener("click", () => {});
+function addInBasket() {
+  btn.addEventListener("click", () => {
+    if (quantity > 0 && quantity < 100) {
+      let productADD = {
+        name: nameProduct.innerHTML,
+        price: parseFloat(priceProduct.innerHTML),
+        quantity: parseFloat(quantitySelect),
+        _id: id,
+      };
+
+      // ----------------------------------- Local Storage ----------------------------- //
+
+      let arrayProductsBasket = [];
+
+      // si déja ajouter les elements au array
+
+      if (localStorage.getItem("products") !== null) {
+        arrayProductsBasket = JSON.parse(localStorage.getItem("products"));
+      }
+
+      // puis on push l array
+
+      arrayProductsBasket.push(productADD);
+      localStorage.setItem("products", JSON.stringify(arrayProductsBasket));
+    }
+  });
+}
+
+addInBasket();
