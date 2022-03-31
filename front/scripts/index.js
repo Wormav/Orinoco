@@ -60,11 +60,8 @@ function getItems() {
         itemPrice.style.fontWeight = "bolder";
 
         // passage du prix en euro
-        returnAPI[item].price = returnAPI[item].price / 100;
-        itemPrice.innerHTML = new Intl.NumberFormat("fr-FR", {
-          style: "currency",
-          currency: "EUR",
-        }).format(returnAPI[item].price);
+        
+        itemPrice.innerHTML = returnAPI[item].price / 100 + " €";
 
         // footer de la carte
         let itemFooter = document.createElement("div");

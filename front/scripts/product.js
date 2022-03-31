@@ -42,16 +42,9 @@ function getItemProduct() {
       //prix
 
       quantityInput.addEventListener("change", (e) => {
-        priceProduct.innerText = new Intl.NumberFormat("fr-FR", {
-          style: "currency",
-          currency: "EUR",
-        }).format((returnAPI.price / 100) * quantitySelect);
-      });
+        priceProduct.innerText = returnAPI.price / 100 * quantitySelect + " €" })
 
-      priceProduct.innerText = new Intl.NumberFormat("fr-FR", {
-        style: "currency",
-        currency: "EUR",
-      }).format(returnAPI.price / 100);
+      priceProduct.innerText = returnAPI.price / 100 + " €";
     });
 }
 
@@ -67,7 +60,7 @@ quantityInput.addEventListener("change", (e) => {
 
 function addInBasket() {
   btn.addEventListener("click", () => {
-    if (quantitySelect > 0 && quantitySelect < 100) {
+    if (quantitySelect > 0 && quantitySelect < 101) {
       let productADD = {
         name: nameProduct.innerHTML,
         price: parseFloat(priceProduct.innerText),
