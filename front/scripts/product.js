@@ -41,7 +41,7 @@ function getItemProduct() {
 
       //prix
 
-      quantityInput.addEventListener("change", (e) => {
+      quantityInput.addEventListener("change", () => {
         priceProduct.innerText = returnAPI.price / 100 * quantitySelect + " €" })
 
       priceProduct.innerText = returnAPI.price / 100 + " €";
