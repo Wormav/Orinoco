@@ -1,89 +1,92 @@
-const url = "http://localhost:3000/api/cameras";
-const mainContainer = document.querySelector("main");
-const imgProduct = document.querySelector("#img");
-const nameProduct = document.querySelector("#name");
-const descriptionProduct = document.querySelector("#description");
-const priceProduct = document.querySelector("#price");
-const btn = document.querySelector("#btn");
-const quantityInput = document.querySelector("input#selection");
-let quantitySelect = 1;
+document.addEventListener("DOMContentLoaded", function () {
+  const url = "http://localhost:3000/api/cameras";
+  const mainContainer = document.querySelector("main");
+  const imgProduct = document.querySelector("#img");
+  const nameProduct = document.querySelector("#name");
+  const descriptionProduct = document.querySelector("#description");
+  const priceProduct = document.querySelector("#price");
+  const btn = document.querySelector("#btn");
+  const quantityInput = document.querySelector("input#selection");
+  let quantitySelect = 1;
 
-// recupere l'id du produit dans l'url
+  // recupere l'id du produit dans l'url
 
-let params = new URLSearchParams(window.location.search);
-let id = params.get("id");
+  let params = new URLSearchParams(window.location.search);
+  let id = params.get("id");
 
-//appel API avec ID pour un produit et intégration dans le html
+  //appel API avec ID pour un produit et intégration dans le html
 
-function getItemProduct() {
-  fetch(url + "/" + id)
-    .then(function (response) {
-      return response.json();
-    })
-    .catch((error) => {
-      alert("un problème est survenu.");
-    })
-    .then(function (returnAPI) {
-      const item = returnAPI;
-      //   console.log(item); // pour vérifier que l'appel fonctionne
+  function getItemProduct() {
+    fetch(url + "/" + id)
+      .then(function (response) {
+        return response.json();
+      })
+      .catch((error) => {
+        alert("un problème est survenu.");
+      })
+      .then(function (returnAPI) {
+        const item = returnAPI;
+        //   console.log(item); // pour vérifier que l'appel fonctionne
 
-      // img
+        // img
 
-      imgProduct.src = returnAPI.imageUrl;
+        imgProduct.src = returnAPI.imageUrl;
 
-      // name
+        // name
 
-      nameProduct.innerText = returnAPI.name;
+        nameProduct.innerText = returnAPI.name;
 
-      //description
+        //description
 
-      descriptionProduct.innerText = returnAPI.description;
+        descriptionProduct.innerText = returnAPI.description;
 
-      //prix
+        //prix
 
-      quantityInput.addEventListener("change", () => {
-        priceProduct.innerText = returnAPI.price / 100 * quantitySelect + " €" })
+        priceProduct.innerText = returnAPI.price / 100 + " €";
 
-      priceProduct.innerText = returnAPI.price / 100 + " €";
-    });
-}
+         // actualise la variable quantity et le prix en fonction
+         
+        quantityInput.addEventListener("input", (e) => {
+          quantitySelect = e.target.value;
+          priceProduct.innerText =
+            (returnAPI.price / 100) * quantitySelect + " €";
+        });
+      });
+  }
 
-getItemProduct();
+  getItemProduct();
 
-// actualise la variable quantity
+ 
 
-quantityInput.addEventListener("change", (e) => {
-  quantitySelect = e.target.value;
-});
+  // click du btn acheter
 
-// click du btn acheter
+  function addInBasket() {
+    btn.addEventListener("click", () => {
+      if (quantitySelect > 0 && quantitySelect < 101) {
+        let productADD = {
+          name: nameProduct.innerHTML,
+          price: parseFloat(priceProduct.innerText),
+          quantity: parseFloat(quantitySelect),
+          _id: id,
+        };
 
-function addInBasket() {
-  btn.addEventListener("click", () => {
-    if (quantitySelect > 0 && quantitySelect < 101) {
-      let productADD = {
-        name: nameProduct.innerHTML,
-        price: parseFloat(priceProduct.innerText),
-        quantity: parseFloat(quantitySelect),
-        _id: id,
-      };
+        // ----------------------------------- Local Storage ----------------------------- //
 
-      // ----------------------------------- Local Storage ----------------------------- //
+        let arrayProductsBasket = [];
 
-      let arrayProductsBasket = [];
+        // si déja ajouter les elements au array
 
-      // si déja ajouter les elements au array
+        if (localStorage.getItem("products") !== null) {
+          arrayProductsBasket = JSON.parse(localStorage.getItem("products"));
+        }
 
-      if (localStorage.getItem("products") !== null) {
-        arrayProductsBasket = JSON.parse(localStorage.getItem("products"));
+        // puis on push l array
+
+        arrayProductsBasket.push(productADD);
+        localStorage.setItem("products", JSON.stringify(arrayProductsBasket));
       }
+    });
+  }
 
-      // puis on push l array
-
-      arrayProductsBasket.push(productADD);
-      localStorage.setItem("products", JSON.stringify(arrayProductsBasket));
-    }
-  });
-}
-
-addInBasket();
+  addInBasket();
+});
