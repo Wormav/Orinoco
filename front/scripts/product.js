@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const priceProduct = document.querySelector("#price");
   const btn = document.querySelector("#btn");
   const quantityInput = document.querySelector("input#selection");
+  const cardBody = document.querySelector("#cardBody")
+  
   let quantitySelect = 1;
 
   // recupere l'id du produit dans l'url
@@ -84,6 +86,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         arrayProductsBasket.push(productADD);
         localStorage.setItem("products", JSON.stringify(arrayProductsBasket));
+
+        // animation de confirmation
+
+        alert("Ajouté au pannier !")
+      
+      } else {
+        alert("La quantité doit être comprise entre 1 et 100")
       }
     });
   }
