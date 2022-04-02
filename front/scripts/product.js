@@ -7,9 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const priceProduct = document.querySelector("#price");
   const btn = document.querySelector("#btn");
   const quantityInput = document.querySelector("input#selection");
-  const cardBody = document.querySelector("#cardBody")
-  
+  const cardBody = document.querySelector("#cardBody");
+
   let quantitySelect = 1;
+  let returnPrice = 0;
 
   // recupere l'id du produit dans l'url
 
@@ -23,9 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(function (response) {
         return response.json();
       })
-      .catch((error) => {
-        alert("un problème est survenu.");
-      })
+
       .then(function (returnAPI) {
         const item = returnAPI;
         //   console.log(item); // pour vérifier que l'appel fonctionne
@@ -46,19 +45,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
         priceProduct.innerText = returnAPI.price / 100 + " €";
 
-         // actualise la variable quantity et le prix en fonction
-         
-        quantityInput.addEventListener("input", (e) => {
-          quantitySelect = e.target.value;
-          priceProduct.innerText =
-            (returnAPI.price / 100) * quantitySelect + " €";
-        });
+        returnPrice = returnAPI.price 
+
+        // actualise la variable quantity et le prix en fonction
+
+        
+      })
+      .catch((error) => {
+        alert("un problème est survenu.");
       });
   }
 
   getItemProduct();
 
- 
+  quantityInput.addEventListener("input", (e) => {
+    quantitySelect = e.target.value;
+    priceProduct.innerText =
+      (returnPrice / 100) * quantitySelect + " €";
+  });
 
   // click du btn acheter
 
@@ -89,10 +93,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // animation de confirmation
 
-        alert("Ajouté au pannier !")
-      
+        alert("Ajouté au pannier !");
       } else {
-        alert("La quantité doit être comprise entre 1 et 100")
+        alert("La quantité doit être comprise entre 1 et 100");
       }
     });
   }
