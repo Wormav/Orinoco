@@ -74,15 +74,48 @@
         <div class="col-lg-6 col-12 mt-5">
           <h2>Résumé de votre commande</h2>
           <div class="text-center mt-5">
-            <ul class="pb-5 m-5 list-unstyled" id="listingProduct">
-              
-            </ul>
+            <ul class="pb-5 m-5 list-unstyled" id="listingProduct"></ul>
 
             <h3 class="my-5">Total : <span id="total"></span></h3>
+
+            <button
+              type="button"
+              class="btn w-25 text-secondaryP border border-secondaryP btn-outline-secondary"
+              id="btn"
+            >
+              Vider le panier
+            </button>
           </div>
         </div>
         <div class="wrapper col-lg-5 offset-lg-0 col-10 offset-1 my-5 g-0">
           <h4 class="text-uppercase">Payement</h4>
+          <div class="form-group mt-4">
+            <label for="name" class="text-uppercase my-2">Nom</label>
+            <input type="text" class="form-control" />
+            <label for="firstName" class="text-uppercase my-2">Prénom</label>
+            <input type="text" class="form-control" />
+            <label for="address" class="text-uppercase my-2">Adresse</label>
+            <input type="text" class="form-control" />
+            <label for="postalCode" class="text-uppercase my-2"
+              >Code postal</label
+            >
+            <input type="number" class="form-control" />
+            <label for="city" class="text-uppercase my-2">Ville</label>
+            <input type="number" class="form-control" />
+            <label for="mail" class="text-uppercase my-2">Adresse mail</label>
+            <input type="text" class="form-control" />
+            <label for="phoneNumber" class="text-uppercase my-2"
+              >Numéro de téléphone</label
+            >
+            <input type="number" class="form-control" />
+            <button
+              type="button"
+              class="btn w-50 text-secondaryP border border-secondaryP btn-outline-secondary mt-5"
+              id="btn"
+            >
+              Acheter
+            </button>
+          </div>
         </div>
       </div>
     </main>
