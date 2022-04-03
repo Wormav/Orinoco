@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
         arrayProductsBasket.push(productADD);
         localStorage.setItem("products", JSON.stringify(arrayProductsBasket));
 
-        // animation de confirmation
+        // animation de confirmation et recharge la page
 
         alert("Ajouté au pannier !");
         location.reload()
