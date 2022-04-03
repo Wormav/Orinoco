@@ -45,11 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         priceProduct.innerText = returnAPI.price / 100 + " €";
 
-        returnPrice = returnAPI.price 
+        returnPrice = returnAPI.price;
 
         // actualise la variable quantity et le prix en fonction
-
-        
       })
       .catch((error) => {
         alert("un problème est survenu.");
@@ -60,8 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   quantityInput.addEventListener("input", (e) => {
     quantitySelect = e.target.value;
-    priceProduct.innerText =
-      (returnPrice / 100) * quantitySelect + " €";
+    priceProduct.innerText = (returnPrice / 100) * quantitySelect + " €";
   });
 
   // click du btn acheter
@@ -97,8 +94,15 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         alert("La quantité doit être comprise entre 1 et 100");
       }
+
+      // actualise icone panier 
+
+      let arrayProducts = JSON.parse(localStorage.getItem("products"));
+      let numberProduct = document.getElementById("numberShop");
+      numberProduct.innerText = arrayProducts.length;
     });
   }
 
   addInBasket();
+  numberBasket();git 
 });

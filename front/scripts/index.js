@@ -86,5 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
+  numberBasket();
+
   getItems();
 });
