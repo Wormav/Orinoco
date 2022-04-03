@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // animation de confirmation
 
         alert("Ajouté au pannier !");
+        location.reload()
       } else {
         alert("La quantité doit être comprise entre 1 et 100");
       }
@@ -104,5 +105,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   addInBasket();
-  numberBasket();git 
+  numberBasket();
 });
