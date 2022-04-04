@@ -81,7 +81,7 @@
             <button
               type="button"
               class="btn w-25 text-secondaryP border border-secondaryP btn-outline-secondary"
-              id="btn"
+              id="btnCleanBasket"
             >
               Vider le panier
             </button>
@@ -89,33 +89,33 @@
         </div>
         <div class="wrapper col-lg-5 offset-lg-0 col-10 offset-1 my-5 g-0">
           <h4 class="text-uppercase">Payement</h4>
-          <div class="form-group mt-4">
+          <form class="form-group mt-4" name="formBuy">
             <label for="name" class="text-uppercase my-2">Nom</label>
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" id="name"/>
             <label for="firstName" class="text-uppercase my-2">Prénom</label>
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" id="firstName" />
             <label for="address" class="text-uppercase my-2">Adresse</label>
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control " id="address"/>
             <label for="postalCode" class="text-uppercase my-2"
               >Code postal</label
             >
-            <input type="number" class="form-control" />
+            <input type="" class="form-control"  id="postalCode"/>
             <label for="city" class="text-uppercase my-2">Ville</label>
-            <input type="number" class="form-control" />
+            <input type="text" class="form-control" id="city"/>
             <label for="mail" class="text-uppercase my-2">Adresse mail</label>
-            <input type="text" class="form-control" />
+            <input type="text" class="form-control" id="mail" />
             <label for="phoneNumber" class="text-uppercase my-2"
               >Numéro de téléphone</label
             >
-            <input type="number" class="form-control" />
+            <input type="number" class="form-control" id="phoneNumber"/>
             <button
               type="button"
               class="btn w-50 text-secondaryP border border-secondaryP btn-outline-secondary mt-5"
-              id="btn"
+              id="btnBuy"
             >
               Acheter
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </main>
