@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function cleanBasket() {
     btnCleanBasket.addEventListener("click", () => {
       localStorage.removeItem("products");
-      location.reload();
+      location.reload();  // A CHANGER POUR EVITER DE RECHARGER LA PAGE 
     });
   }
 
