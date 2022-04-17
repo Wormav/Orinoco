@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const priceTotal = document.getElementById("total");
   const btnCleanBasket = document.getElementById("btnCleanBasket");
   const btnBuy = document.getElementById("btnBuy");
-  let lsData = JSON.parse(localStorage.getItem("products"))
+  let lsData = JSON.parse(localStorage.getItem("products"));
+  const urlForPost = " ​http://localhost:3000/api/cameras/order";
 
   //génére le résumé de la commande
 
@@ -37,10 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function cleanBasket() {
     btnCleanBasket.addEventListener("click", () => {
-      localStorage.removeItem("products"); 
-      listingProduct.style.display = "none"
-      priceTotal.innerText = ""
-      numberBasket();  // pour reset le 0 dans le panier en même temps
+      localStorage.removeItem("products");
+      listingProduct.style.display = "none";
+      priceTotal.innerText = "";
+      numberBasket(); // pour reset le 0 dans le panier en même temps
     });
   }
 
@@ -66,21 +67,17 @@ document.addEventListener("DOMContentLoaded", function () {
       !inputPhoneNumber.value
     ) {
       alert("Veuilliez remplir tout les champs du fomrulaire");
-    }
-
-    // si un champs n'est pas bon ATTENTION PAS FINI VOIR POUR RETIRER ROUGE UNE FOIS BON
-    else if (isNaN(inputPostalCode.value)) {
+    } else if (isNaN(inputPostalCode.value)) {
       alert("Le code postal doit comporter que des chiffres");
     } else if (isNaN(inputPhoneNumber.value)) {
       alert("Le numéro de téléphone doit comporter que des chiffres");
     } else {
-
-
       // Si le formulaire est valide on crée un tableu json des commandes et un order avec les value du formulaire clien + le tableau
-  
-      let productOrdered = [];
-      productOrdered.push(lsData)
 
+      console.log("le btn marche"); // pour check si on est bien dans le else
+
+      let productOrdered = [];
+      productOrdered.push(lsData);
 
       const order = {
         contact: {
@@ -91,12 +88,32 @@ document.addEventListener("DOMContentLoaded", function () {
           email: inputMail.value,
         },
         products: productOrdered,
-      }
-      
+      };
+      // Requête Post au back
+
+      // entête
+      const headOrdered = {
+        method: "POST",
+        body: JSON.stringify(order),
+        headers: { "Content-Type": "application/json" },
+      };
+
+      // envoie
+
+      fetch(urlForPost, headOrdered)
+        .then((response) => response.json())
+        .then((data) => {
+          localStorage.removeItem("products");
+          console.log(data);
+        })
+        .catch((error) => {
+          alert(
+            "un problème est survenue lors de l'envoie de votre commande! code " +
+              error
+          );
+        });
     }
   });
-
-  
 
   // fonction qui actualise l'icone du panier
 
@@ -110,5 +127,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   cleanBasket();
 
-  // console.log(lsData); un console log pour check les produits dans le LS 
+  // console.log(lsData); un console log pour check les produits dans le LS
 });
