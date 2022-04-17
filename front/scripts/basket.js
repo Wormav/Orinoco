@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const priceTotal = document.getElementById("total");
   const btnCleanBasket = document.getElementById("btnCleanBasket");
   const btnBuy = document.getElementById("btnBuy");
+  let lsData = JSON.parse(localStorage.getItem("products"))
 
   //génére le résumé de la commande
 
@@ -72,8 +73,30 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Le code postal doit comporter que des chiffres");
     } else if (isNaN(inputPhoneNumber.value)) {
       alert("Le numéro de téléphone doit comporter que des chiffres");
+    } else {
+
+
+      // si le formulaire est valide on crée un tableu json des commandes et un order avec les value du formulaire clien + le tableau
+  
+      let productOrdered = [];
+      productOrdered.push(lsData)
+
+
+      const order = {
+        contact: {
+          firstName: inputFirstName.value,
+          lastName: inputName.value,
+          city: inputCity.value,
+          address: inputAddress.value,
+          email: inputMail.value,
+        },
+        products: productOrdered,
+      }
+      
     }
   });
+
+  
 
   // fonction qui actualise l'icone du panier
 
@@ -86,4 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // fonction qui vide le localStorage donc le panier
 
   cleanBasket();
+
+  console.log(lsData);
 });
