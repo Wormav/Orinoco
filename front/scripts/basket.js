@@ -36,8 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function cleanBasket() {
     btnCleanBasket.addEventListener("click", () => {
-      localStorage.removeItem("products");
-      location.reload();  // A CHANGER POUR EVITER DE RECHARGER LA PAGE 
+      localStorage.removeItem("products"); 
+      listingProduct.style.display = "none"
+      priceTotal.innerText = ""
     });
   }
 
@@ -50,12 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let inputCity = document.getElementById("city");
     let inputMail = document.getElementById("mail");
     let inputPhoneNumber = document.getElementById("phoneNumber");
-
-    // on crée des reg
-
-    let regPostalCode = new RegExp(/[0-9]{5}/, "g");
-    let regPhoneNumber = new RegExp(/^(\+33\s[1-9]{8})|(0[1-9]\s{8})$/);
-    let regMail = new RegExp(/^([w-.]+)@((?:[w]+.)+)([a-zA-Z]{2,4})/i);
 
     // si un champs n'est pas remplie une alert ce déclanche
 
@@ -71,11 +66,11 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Veuilliez remplir tout les champs du fomrulaire");
     }
 
-    // si un champs n'est pas bon
+    // si un champs n'est pas bon ATTENTION PAS FINI VOIR POUR RETIRER ROUGE UNE FOIS BON
     else if (isNaN(inputPostalCode.value)) {
-      inputPostalCode.classList.add("border-danger", "border-5");
+      alert("Le code postal doit comporter que des chiffres");
     } else if (isNaN(inputPhoneNumber.value)) {
-      inputPhoneNumber.classList.add("border-danger", "border-5");
+      alert("Le numéro de téléphone doit comporter que des chiffres");
     }
   });
 
