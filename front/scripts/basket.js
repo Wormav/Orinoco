@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let lsData = JSON.parse(localStorage.getItem("products"));
   const urlForPost = "http://localhost:3000/api/cameras/order";
 
+  console.log(lsData);
+
   //génére le résumé de la commande
 
   function getOrdered() {
@@ -90,19 +92,19 @@ document.addEventListener("DOMContentLoaded", function () {
         products: productOrdered,
       };
 
-      // console.log(inputFirstName.value)
-      // console.log(inputName.value)
-      // console.log(inputCity.value)
-      // console.log(inputAddress.value)
-      // console.log(inputMail.value)
+      console.log(inputFirstName.value)
+      console.log(inputName.value)
+      console.log(inputCity.value)
+      console.log(inputAddress.value)
+      console.log(inputMail.value)
 
-      // console.log(productOrdered)
-      // console.log(JSON.stringify(order))
+      console.log(productOrdered)
+      console.log(JSON.stringify(order))
 
       const options = {
         method: "POST",
         body: JSON.stringify(order),
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json ; charset=utf-8" },
       };
 
       // Requête Post au back
@@ -110,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
       fetch(urlForPost, options)
         .then((response) => response.json())
         .then((json) => {
-          console.log(json);
+          console.log(json);  
         });
     }
   });
