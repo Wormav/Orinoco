@@ -89,28 +89,28 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         products: productOrdered,
       };
-      // Requête Post au back
 
-      // entête
-      const headOrdered = {
+      console.log(inputFirstName.value)
+      console.log(inputName.value)
+      console.log(inputCity.value)
+      console.log(inputAddress.value)
+      console.log(inputMail.value)
+
+      console.log(productOrdered)
+      console.log(JSON.stringify(order))
+
+      const options = {
         method: "POST",
         body: JSON.stringify(order),
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json; charset=utf-8" },
       };
 
-      // envoie
+      // Requête Post au back
 
-      fetch(urlForPost, headOrdered)
+      fetch(urlForPost, options)
         .then((response) => response.json())
-        .then((data) => {
-          localStorage.removeItem("products");
-          console.log(data);
-        })
-        .catch((error) => {
-          alert(
-            "un problème est survenue lors de l'envoie de votre commande! code " +
-              error
-          );
+        .then((json) => {
+          console.log(json);
         });
     }
   });
@@ -126,6 +126,4 @@ document.addEventListener("DOMContentLoaded", function () {
   // fonction qui vide le localStorage donc le panier
 
   cleanBasket();
-
-  // console.log(lsData); un console log pour check les produits dans le LS
 });
