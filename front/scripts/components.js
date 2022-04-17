@@ -5,7 +5,7 @@ function numberBasket() {
     let numberProduct = document.getElementById("numberShop");
 
     if (arrayProducts === null) {
-      numberProduct.style.display = "none";
+      numberProduct.innerText = "0";
     } else {
       numberProduct.innerText = arrayProducts.length ;
     }

@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.removeItem("products"); 
       listingProduct.style.display = "none"
       priceTotal.innerText = ""
+      numberBasket();  // pour reset le 0 dans le panier en même temps
     });
   }
 

@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // animation de confirmation et recharge la page
 
         alert("Ajouté au pannier !");
-        location.reload() // A CHANGER POUR EVITER DE RECHARGER LA PAGE 
+       
       } else {
         alert("La quantité doit être comprise entre 1 et 100");
       }
