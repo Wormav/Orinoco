@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
 
 
-      // si le formulaire est valide on crée un tableu json des commandes et un order avec les value du formulaire clien + le tableau
+      // Si le formulaire est valide on crée un tableu json des commandes et un order avec les value du formulaire clien + le tableau
   
       let productOrdered = [];
       productOrdered.push(lsData)
@@ -110,5 +110,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   cleanBasket();
 
-  console.log(lsData);
+  // console.log(lsData); un console log pour check les produits dans le LS 
 });
