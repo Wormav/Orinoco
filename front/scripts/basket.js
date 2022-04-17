@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnCleanBasket = document.getElementById("btnCleanBasket");
   const btnBuy = document.getElementById("btnBuy");
   let lsData = JSON.parse(localStorage.getItem("products"));
-  const urlForPost = " ​http://localhost:3000/api/cameras/order";
+  const urlForPost = "http://localhost:3000/api/cameras/order";
 
   //génére le résumé de la commande
 
@@ -90,19 +90,19 @@ document.addEventListener("DOMContentLoaded", function () {
         products: productOrdered,
       };
 
-      console.log(inputFirstName.value)
-      console.log(inputName.value)
-      console.log(inputCity.value)
-      console.log(inputAddress.value)
-      console.log(inputMail.value)
+      // console.log(inputFirstName.value)
+      // console.log(inputName.value)
+      // console.log(inputCity.value)
+      // console.log(inputAddress.value)
+      // console.log(inputMail.value)
 
-      console.log(productOrdered)
-      console.log(JSON.stringify(order))
+      // console.log(productOrdered)
+      // console.log(JSON.stringify(order))
 
       const options = {
         method: "POST",
         body: JSON.stringify(order),
-        headers: { "Content-Type": "application/json; charset=utf-8" },
+        headers: { "Content-Type": "application/json" },
       };
 
       // Requête Post au back
