@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
           localStorage.removeItem("products");
           console.log(data);
           localStorage.setItem("orderId", data.orderId);
+          document.location.href = "confirm.html"
         })
         .catch((error) => {
           alert("un problème est survenu.");

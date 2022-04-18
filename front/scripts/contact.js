@@ -1,1 +1,1 @@
-numberBasket();
+document.addEventListener("DOMContentLoaded", function () { numberBasket(); })
