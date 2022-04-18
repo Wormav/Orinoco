@@ -8,7 +8,7 @@ This is only an MVP, no real transaction management is done.
 
 No model is given. You are asked to improvise the user interface.
 
-![homepage](Lien d'une image de la homepage)
+![homepage](homepage.png)
 
 ## Specifications
 
