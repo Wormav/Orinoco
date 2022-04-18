@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
           localStorage.removeItem("products");
           console.log(data);
           localStorage.setItem("orderId", data.orderId);
-          document.location.href = "confirm.html"
+          document.location.href = "confirm.html";
         })
         .catch((error) => {
           alert("un problème est survenu.");
@@ -111,15 +111,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // fonction qui actualise l'icone du panier
+  function mainBasket() {
+    // fonction qui actualise l'icone du panier
 
-  numberBasket();
+    numberBasket();
 
-  // fonction qui génére le résumé de la commande
+    // fonction qui génére le résumé de la commande
 
-  getOrdered();
+    getOrdered();
 
-  // fonction qui vide le localStorage donc le panier
+    // fonction qui vide le localStorage donc le panier
 
-  cleanBasket();
+    cleanBasket();
+  }
+
+  mainBasket();
 });

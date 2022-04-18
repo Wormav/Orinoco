@@ -91,12 +91,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // animation de confirmation et recharge la page
 
         alert("Ajouté au pannier !");
-       
       } else {
         alert("La quantité doit être comprise entre 1 et 100");
       }
 
-      // actualise icone panier 
+      // actualise icone panier
 
       let arrayProducts = JSON.parse(localStorage.getItem("products"));
       let numberProduct = document.getElementById("numberShop");
@@ -104,6 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  addInBasket();
-  numberBasket();
+  function mainProduct() {
+    addInBasket();
+    numberBasket();
+  }
+
+  mainProduct();
 });

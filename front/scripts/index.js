@@ -86,7 +86,11 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
-  numberBasket();
+  function mainIndex() {
+    numberBasket();
 
-  getItems();
+    getItems();
+  }
+
+  mainIndex();
 });
