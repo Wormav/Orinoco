@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let lsData = JSON.parse(localStorage.getItem("products"));
   const urlForPost = "http://localhost:3000/api/cameras/order";
 
-  console.log(lsData);
-
   //génére le résumé de la commande
 
   function getOrdered() {
@@ -78,28 +76,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
       console.log("le btn marche"); // pour check si on est bien dans le else
 
-      let productOrdered = [];
-      productOrdered.push(lsData);
+      let lsDataId = lsData.map((val) => val._id);
 
       const order = {
         contact: {
           firstName: inputFirstName.value,
           lastName: inputName.value,
           city: inputCity.value,
-          address: inputAddress.value,
+          address: `${inputAddress.value} ${inputPostalCode.value} `,
           email: inputMail.value,
         },
-        products: productOrdered,
+        products: lsDataId,
       };
-
-      console.log(inputFirstName.value)
-      console.log(inputName.value)
-      console.log(inputCity.value)
-      console.log(inputAddress.value)
-      console.log(inputMail.value)
-
-      console.log(productOrdered)
-      console.log(JSON.stringify(order))
 
       const options = {
         method: "POST",
@@ -112,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
       fetch(urlForPost, options)
         .then((response) => response.json())
         .then((json) => {
-          console.log(json);  
+          console.log(json);
         });
     }
   });
