@@ -10,9 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(function (response) {
         return response.json();
       })
-      .catch((error) => {
-        alert("un problème est survenu.");
-      })
 
       .then(function (returnAPI) {
         const items = returnAPI;
@@ -83,6 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
           cardBtn.href = `product.html?id=${returnAPI[item]._id}`;
           cardBtn.innerText = "Afficher le produit";
         }
+      })
+      .catch((error) => {
+        alert("un problème est survenu.");
       });
   }
 

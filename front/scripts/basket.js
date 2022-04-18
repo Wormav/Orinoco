@@ -99,8 +99,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       fetch(urlForPost, options)
         .then((response) => response.json())
-        .then((json) => {
-          console.log(json);
+        .then((data) => {
+          localStorage.removeItem("products");
+          console.log(data);
+          localStorage.setItem("orderId", data.orderId);
+        })
+        .catch((error) => {
+          alert("un problème est survenu.");
         });
     }
   });
