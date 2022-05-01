@@ -1,22 +1,15 @@
 {
-  "name": "orinoco",
+  "name": "orinoco-backend",
   "version": "1.0.0",
-  "description": "Projet 5",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Wormav/Orinoco.git"
-  },
-  "author": "Jérémy Lorette",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Wormav/Orinoco/issues"
-  },
-  "homepage": "https://github.com/Wormav/Orinoco#readme",
   "dependencies": {
-    "bootstrap": "^5.1.3"
+    "express": "^4.16.4",
+    "uuid": "^3.3.2"
   }
 }

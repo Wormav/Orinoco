@@ -47,13 +47,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   btnBuy.addEventListener("click", (e) => {
     // recupération des input
-    let inputName = document.getElementById("name");
-    let inputFirstName = document.getElementById("firstName");
-    let inputAddress = document.getElementById("address");
-    let inputPostalCode = document.getElementById("postalCode");
-    let inputCity = document.getElementById("city");
-    let inputMail = document.getElementById("mail");
-    let inputPhoneNumber = document.getElementById("phoneNumber");
+    const inputName = document.getElementById("name");
+    const inputFirstName = document.getElementById("firstName");
+    const inputAddress = document.getElementById("address");
+    const inputPostalCode = document.getElementById("postalCode");
+    const inputCity = document.getElementById("city");
+    const inputMail = document.getElementById("mail");
+    const inputPhoneNumber = document.getElementById("phoneNumber");
 
     // si un champs n'est pas remplie une alert ce déclanche
 
